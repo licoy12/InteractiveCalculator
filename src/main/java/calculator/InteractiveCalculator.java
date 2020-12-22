@@ -13,6 +13,7 @@ public class InteractiveCalculator {
 			Scanner scanner = new Scanner(System.in);
 			
 			
+			//implemented a control statement that lets the user decide when to exit the program
 			while(true) {
 				System.out.print("Enter first number: ");
 				int numberA = scanner.nextInt();
@@ -49,8 +50,10 @@ public class InteractiveCalculator {
 					DivideOperation div = new DivideOperation();
 					div.setA(numberA);
 					div.setB(numberB);
-					double fResult = div.getResult();
-					System.out.printf("%.2f\n",fResult);
+					//implicit typecast from int to double
+					double floatResult = result;
+					floatResult = div.getResult();
+					System.out.printf("%.2f\n",floatResult);
 				}
 				
 				System.out.println("Do it again? Enter anything for yes or no to exit: ");
@@ -59,6 +62,8 @@ public class InteractiveCalculator {
 					break;
 				}
 			}
+			
+			scanner.close();
 
 	}
 
